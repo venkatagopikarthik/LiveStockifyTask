@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Inspirational Quotes - LiveStockify</title>
+    <link rel="stylesheet" href="styles.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+</head>
+<body>
+    <div class="container">
+        <header class="header">
+            <div class="logo">
+                <i class="fas fa-quote-left"></i>
+                <h1>Inspirational Quotes</h1>
+            </div>
+            <p class="subtitle">Get inspired with random motivational quotes</p>
+        </header>
+
+        <main class="main-content">
+            <div class="quote-card" id="quoteCard">
+                <div class="quote-content" id="quoteContent">
+                    <div class="quote-icon">
+                        <i class="fas fa-quote-left"></i>
+                    </div>
+                    <p class="quote-text" id="quoteText">Click the button below to get your first inspirational quote!</p>
+                    <div class="quote-author" id="quoteAuthor"></div>
+                </div>
+                
+                <div class="loading" id="loading" style="display: none;">
+                    <div class="spinner"></div>
+                    <p>Loading your inspiration...</p>
+                </div>
+                
+                <div class="error-message" id="errorMessage" style="display: none;">
+                    <i class="fas fa-exclamation-triangle"></i>
+                    <p id="errorText"></p>
+                </div>
+            </div>
+
+            <div class="controls">
+                <button class="btn btn-primary" id="getQuoteBtn" onclick="getQuote()">
+                    <i class="fas fa-magic"></i>
+                    Get New Quote
+                </button>
+                
+                <button class="btn btn-secondary" id="shareBtn" onclick="shareQuote()" style="display: none;">
+                    <i class="fas fa-share"></i>
+                    Share Quote
+                </button>
+            </div>
+
+            <div class="rate-limit-info" id="rateLimitInfo" style="display: none;">
+                <div class="rate-limit-card">
+                    <i class="fas fa-clock"></i>
+                    <div class="rate-limit-content">
+                        <h3>Rate Limit Reached</h3>
+                        <p id="rateLimitText">You can make 5 requests per minute. Please wait before requesting another quote.</p>
+                        <div class="countdown" id="countdown">
+                            <span id="countdownTime">0</span> seconds remaining
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="stats">
+                <div class="stat-item">
+                    <i class="fas fa-bolt"></i>
+                    <span>Quotes Generated: <span id="quoteCount">0</span></span>
+                </div>
+                <div class="stat-item">
+                    <i class="fas fa-clock"></i>
+                    <span>Rate Limit: 5/min</span>
+                </div>
+            </div>
+        </main>
+
+        <footer class="footer">
+            <p>&copy; 2024 LiveStockify. Built with Spring Boot & JavaScript.</p>
+        </footer>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
