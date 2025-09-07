@@ -26,7 +26,7 @@ public class RateLimitingService {
         RequestCounter counter = requestCounters.get(clientIp);
         int currentCount = counter.incrementAndGet();
         
-        // Clean up expired entries periodically
+       
         if (currentCount == 1) {
             cleanupExpiredEntries(currentTime);
         }
@@ -71,3 +71,4 @@ public class RateLimitingService {
         }
     }
 }
+
